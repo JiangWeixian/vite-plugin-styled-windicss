@@ -10,18 +10,20 @@ const debug = {
   styledComponents: _debug(`${NAME}:transform:styledComponents`),
 }
 
-function VitePluginWindicss(): Plugin[] {
+function VitePluginWindicss(): Plugin {
   let utils: WindiPluginUtils
 
-  const plugins: Plugin[] = []
-
-  plugins.push({
-    name: `${NAME}:styled-components`,
-    configResolved(config) {
+  const plugin: Plugin = {
+    name: NAME,
+    enforce: 'post',
+    async configResolved(config) {
       const windicss = config.plugins.find((i) => i.name === 'vite-plugin-windicss')
       utils = windicss!.api
     },
     async transform(code, id) {
+      if (!utils) {
+        return null
+      }
       await utils.ensureInit()
       if (!utils.isDetectTarget(id) || !code.includes('styled-components')) return
       debug.styledComponents(id)
@@ -33,8 +35,6 @@ function VitePluginWindicss(): Plugin[] {
             const next = node.value.cooked.replace(
               /(.*)@apply([^`$]*)\n/gm,
               (_match: string, pre: string, applyCss: string) => {
-                console.log('====')
-                console.log(applyCss)
                 const parsed = utils.transformCSS(`&{@apply ${applyCss}}`, id)
                 return `${pre} ${parsed}`
               },
@@ -57,9 +57,9 @@ function VitePluginWindicss(): Plugin[] {
       }
       return null
     },
-  })
+  }
 
-  return plugins
+  return plugin
 }
 
 export default VitePluginWindicss
