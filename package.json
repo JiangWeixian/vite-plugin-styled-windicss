@@ -40,6 +40,10 @@
       "eslint --fix"
     ]
   },
+  "peerDependencies": {
+    "vite": "^2.0.1",
+    "vite-plugin-windicss": "^1.2.7"
+  },
   "dependencies": {
     "debug": "^4.3.2",
     "estree-walker": "2.0.1",
