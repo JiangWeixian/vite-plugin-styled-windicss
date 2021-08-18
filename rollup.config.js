@@ -28,7 +28,7 @@ export default [
       bundleSize(),
     ],
     output: {
-      name: 'rollup-template',
+      name: 'vite-plugin-styled-windicss',
       file: pkg.browser,
       format: 'umd',
     },
