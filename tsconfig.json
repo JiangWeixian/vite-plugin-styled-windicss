@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "importHelpers": true,
     "declaration": true,
@@ -17,8 +17,8 @@
     "noUnusedLocals": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["packages/src/*"]
     }
   },
-  "exclude": ["node_modules", "example", "test"]
+  "exclude": ["node_modules", "examples/react", "test"]
 }

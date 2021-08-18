@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-styled-windicss",
+  "name": "vite-plugin-styled-windicss-monorepo",
   "version": "0.0.0",
   "keywords": [
     "vite",
@@ -18,17 +18,8 @@
     "email": "jiangweixian1994@gmail.com"
   },
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
-  "main": "lib/vite-plugin-styled-windicss.cjs.js",
-  "module": "lib/vite-plugin-styled-windicss.esm.js",
-  "browser": "lib/vite-plugin-styled-windicss.umd.js",
-  "typings": "lib/index.d.ts",
   "scripts": {
-    "build": "rimraf lib && rollup -c --silent",
-    "dev": "rollup -c -w --silent",
-    "test": "jest",
-    "pretest": "pnpm run build",
-    "lint:fix": "eslint . --fix",
-    "release": "pnpm run build && np --no-cleanup --yolo --no-publish --any-branch"
+    "lint:fix": "eslint . --fix"
   },
   "husky": {
     "hooks": {
@@ -40,43 +31,14 @@
       "eslint --fix"
     ]
   },
-  "peerDependencies": {
-    "vite": "^2.0.1",
-    "vite-plugin-windicss": "^1.2.7"
-  },
-  "dependencies": {
-    "debug": "^4.3.2",
-    "estree-walker": "2.0.1",
-    "magic-string": "^0.25.7",
-    "windicss": "^3.1.7"
-  },
   "devDependencies": {
     "@aiou/eslint-config": "^0.1.3",
     "@changesets/cli": "^2.16.0",
-    "@rollup/plugin-alias": "^3.1.4",
-    "@rollup/plugin-commonjs": "^19.0.2",
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "@types/debug": "^4.1.7",
-    "@types/jest": "26.0.24",
-    "@windicss/plugin-utils": "^1.2.7",
     "cz-emoji": "^1.3.1",
     "eslint": "^7.31.0",
     "husky": "3.0.9",
-    "jest": "27.0.6",
     "lint-staged": "^11.0.1",
-    "np": "7.5.0",
-    "prettier": "2.3.2",
-    "pretty-quick": "3.1.1",
-    "rimraf": "3.0.2",
-    "rollup": "2.53.2",
-    "rollup-plugin-bundle-size": "^1.0.3",
-    "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.20",
-    "rollup-plugin-typescript2": "0.30.0",
-    "ts-jest": "27.0.3",
-    "ts-node": "10.0.0",
-    "tslib": "2.3.0",
-    "typescript": "4.3.5",
-    "vite": "^2.5.0"
+    "prettier": "2.3.2"
   },
   "config": {
     "commitizen": {
