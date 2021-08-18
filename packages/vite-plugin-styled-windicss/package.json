@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-styled-windicss",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "keywords": [
     "vite",
     "vite-plugin",
@@ -11,7 +11,8 @@
   "homepage": "https://github.com/JiangWeixian/vite-plugin-styled-windicss#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JiangWeixian/vite-plugin-styled-windicss"
+    "url": "https://github.com/JiangWeixian/vite-plugin-styled-windicss",
+    "directory": "packages/vite-plugin-styled-windicss"
   },
   "bugs": {
     "url": "https://github.com/JiangWeixian/vite-plugin-styled-windicss/issues",
