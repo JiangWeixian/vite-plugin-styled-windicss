@@ -1,27 +1,28 @@
 {
-  "homepage": "https://github.com/JiangWeixian/vite-plugin-styled-windicss#readme",
-  "bugs": {
-    "url": "https://github.com/JiangWeixian/vite-plugin-styled-windicss/issues",
-    "email": "jiangweixian1994@gmail.com"
-  },
   "name": "vite-plugin-styled-windicss",
   "version": "0.0.0",
   "license": "MIT",
+  "homepage": "https://github.com/JiangWeixian/vite-plugin-styled-windicss#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/JiangWeixian/vite-plugin-styled-windicss",
     "directory": "packages/rollup-template"
   },
+  "bugs": {
+    "url": "https://github.com/JiangWeixian/vite-plugin-styled-windicss/issues",
+    "email": "jiangweixian1994@gmail.com"
+  },
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
   "main": "lib/rollup-template.cjs.js",
   "module": "lib/rollup-template.esm.js",
+  "browser": "lib/rollup-template.umd.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf lib && rollup -c --silent",
     "dev": "rollup -c -w --silent",
     "test": "jest",
     "pretest": "pnpm run build",
-    "update": "pnpm update && pnpm update --save-dev",
-    "check": "pnpm outdated && npm outdated --save-dev",
+    "lint:fix": "eslint . --fix",
     "release": "pnpm run build && np --no-cleanup --yolo --no-publish --any-branch"
   },
   "husky": {
@@ -34,14 +35,13 @@
       "eslint --fix"
     ]
   },
-  "browser": "lib/rollup-template.umd.js",
-  "typings": "lib/index.d.ts",
   "dependencies": {
     "debug": "^4.3.2",
     "windicss": "^3.1.7"
   },
   "devDependencies": {
-    "@aiou/eslint-config": "^0.2.1",
+    "@aiou/eslint-config": "^0.1.3",
+    "@changesets/cli": "^2.16.0",
     "@rollup/plugin-alias": "^3.1.4",
     "@rollup/plugin-commonjs": "^19.0.2",
     "@rollup/plugin-node-resolve": "^13.0.4",
