@@ -19,7 +19,10 @@
   },
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
   "scripts": {
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "build": "pnpm build --filter=!./examples/react",
+    "ci:version": "pnpm changeset version",
+    "ci:publish": "pnpm run build && pnpm changeset publish"
   },
   "husky": {
     "hooks": {
