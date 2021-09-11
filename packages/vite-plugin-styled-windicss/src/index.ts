@@ -4,6 +4,8 @@ import { walk } from 'estree-walker'
 import MagicString from 'magic-string'
 import type { WindiPluginUtils } from '@windicss/plugin-utils'
 
+import { APPLY_REGEX } from './constants'
+
 const NAME = 'vite-plugin-styled-windicss'
 
 const debug = {
@@ -33,7 +35,7 @@ function VitePluginWindicss(): Plugin {
         enter: (node: any) => {
           if (node.type === 'TemplateElement' && node.value.cooked.includes('@apply')) {
             const next = node.value.cooked.replace(
-              /(.*)@apply([^`$]*)\n/gm,
+              APPLY_REGEX,
               (_match: string, pre: string, applyCss: string) => {
                 const parsed = utils.transformCSS(`&{@apply ${applyCss}}`, id)
                 return `${pre} ${parsed}`

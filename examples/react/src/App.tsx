@@ -5,10 +5,7 @@ const Common = styled.div`
 `
 
 const UnFocusStyle = css`
-  color: ${(props: any) =>
-    props.theme === 'primary'
-      ? 'white'
-      : 'blue'};
+  color: ${(props: any) => (props.theme === 'primary' ? 'white' : 'blue')};
 `
 
 const FocusStyle = css`
@@ -19,7 +16,7 @@ const WithTemplateLiterals = styled.button`
   @apply cursor-pointer border-none text-center rounded appearance-none;
 
   ${UnFocusStyle};
-  
+
   padding: ${(props: any) => (props.size === 'lg' ? '4px 16px' : '2px 16px')};
 
   height: ${(props: any) => (props.size === 'lg' ? '28px' : '20px')};
@@ -34,9 +31,8 @@ const Nested = styled.div`
   @apply m-0 p-0 w-100vw h-100vh overflow-hidden hover:(bg-blue-500 text-xs);
 
   div {
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', 'sans-serif';
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+      'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     &:hover {
@@ -101,13 +97,12 @@ type DayProps = {
   active?: boolean
 }
 
-
 const StyleDay = styled.div`
   @apply text-center cursor-pointer flex items-center justify-center;
 
   span {
     @apply m-0 w-7 leading-loose inline-block box-border rounded;
-    
+
     aspect-ratio: 1 / 1;
   }
 `
@@ -120,22 +115,19 @@ function App() {
       <Common>Common</Common>
       <WithTemplateLiterals>WithTemplateLiterals</WithTemplateLiterals>
       <Nested>
-        <div>
-          red
-        </div>
+        <div>red</div>
         white
       </Nested>
       <StyleDay>
-        <span>
-          1
-        </span>
+        <span>1</span>
       </StyleDay>
       <header className="m-4">
         <p>Hello Vite + React!</p>
         <p>
           <button
             className="border border-gray-400 rounded px-4 py-2 mt-4 hover:(bg-teal-400 border-teal-400)"
-            onClick={() => setCount(count => count + 1)}>
+            onClick={() => setCount((count) => count + 1)}
+          >
             count is: {count}
           </button>
         </p>

@@ -1,3 +1,6 @@
+/**
+ * @type {import('@jest/types').Config.InitialOptions}
+ */
 module.exports = {
   cacheDirectory: './jest/cache',
   collectCoverage: true,
