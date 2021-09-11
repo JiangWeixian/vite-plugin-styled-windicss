@@ -30,7 +30,7 @@ jobs:
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install 
         run: |
-          pnpm i
+          pnpm i --frozen-lockfile=false
       - name: Test
         run: |
           pnpm run test
